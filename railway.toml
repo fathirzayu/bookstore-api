@@ -1,0 +1,8 @@
+[build]
+builder = "paketobuildpacks/builder:base"
+
+[deploy]
+startCommand = "go run main.go"
+
+[env]
+PORT = "8080"

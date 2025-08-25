@@ -1,12 +1,21 @@
 package routes
 
 import (
+	"net/http"
+
 	"github.com/gin-gonic/gin"
 	"bookstore-api/controllers"
 	"bookstore-api/middlewares"
 )
 
 func Register(r *gin.Engine) {
+	// 🚀 Default route supaya tidak 404 di /
+	r.GET("/", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{
+			"message": "🚀 Bookstore API is running on Railway",
+		})
+	})
+
 	api := r.Group("/api")
 	{
 		users := api.Group("/users")
