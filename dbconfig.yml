@@ -1,0 +1,4 @@
+production:
+  dialect: postgres
+  datasource: ${DATABASE_URL}
+  dir: migrations
